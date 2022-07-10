@@ -1,0 +1,14 @@
+.followBtn {
+  border-radius: 5px;
+  font-family: "Roboto";
+  padding: 5px 15px;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.followBtn .icon {
+  font-size: 16px;
+  margin-right: 5px;
+}

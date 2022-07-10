@@ -1,0 +1,107 @@
+.post {
+  width: 60%;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 0 1vmax 2vmax;
+  margin: 1vmax;
+}
+
+.postHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;  
+  padding: 20px 10px;
+}
+.postOwner {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.postOwner a {
+  text-decoration: none;
+  color: rgba(0, 0, 0, 0.767);
+}
+
+.postHeader > button {
+  border-radius: 50%;
+  color: rgba(0, 0, 0, 0.582);
+}
+
+.post > img {
+  width: 100%;
+}
+.postDetails {
+  display: flex;
+  align-items: center;
+} 
+
+.postDetails > a {
+  text-decoration: none;
+  color: rgba(0, 0, 0, 0.767);
+  margin: 0 10px;
+}
+
+.postFooter {
+  margin-top: 10px;
+}
+
+.postFooter > button {
+  color: rgba(0, 0, 0, 0.767);
+  margin: 0 10px;
+  border: none;
+  background: transparent;
+  border-radius: 50%;
+  transition: all 0.3s;
+  cursor: pointer;
+}
+
+
+.postFooter > button > svg {
+  font-size: 1.7vmax;
+}
+
+.addComment {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 15px;
+  padding: 0 10px;
+}
+
+.DialogBox {
+  min-width: 500px;
+  /* min-height: 90vh; */
+  padding: 2vmax;
+}
+
+.commentForm {
+  display: flex;
+  width: 90%;
+  /* margin-top: 2vmax; */
+}
+
+.captionForm{
+  margin-top: 40px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+@media screen and (max-width: 600px) {
+  .post {
+    width: 100%;
+    border-radius: 0;
+    box-shadow: none;
+    border: 1px solid rgba(0, 0, 0, 0.068);
+    padding: 0 0 4vw;
+    margin: 0;
+  }
+
+  .postFooter > button > svg {
+    font-size: 8vw;
+  }
+}

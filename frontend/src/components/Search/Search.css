@@ -1,0 +1,33 @@
+.search {
+  min-height: 90vh;
+  background-color: #f3f4f5;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.searchForm {
+  background-color: white;
+  width: 500px;
+  height: 80% !important;
+  border-radius: 5px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
+}
+
+.searchResults {
+  width: 100%;
+  height: 50%;
+  overflow-y: auto;
+  padding: 0 2vmax;
+}
+
+@media screen and (max-width: 600px) {
+  .searchForm {
+    width: 100%;
+  }
+}

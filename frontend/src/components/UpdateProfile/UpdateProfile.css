@@ -1,0 +1,73 @@
+.updateProfile {
+  min-height: 91vh;
+  background-color: #f3f4f5;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.updateProfileForm {
+  background-color: white;
+  width: 500px;
+  border-radius: 10px;
+  box-sizing: border-box;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
+}
+
+.avatarImg input[type="file"] {
+  display: none;
+}
+
+.avatarImg {
+  position: relative;
+  margin-bottom: 30px;
+}
+
+.updateProfileForm .fileUpload {
+  display: flex;
+  position: absolute;
+  right: 0;
+  bottom: -20px;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  margin: 25px 0;
+  background-color: #2691d9;
+  padding: 10px;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+  transition: 0.3s;
+}
+
+.updateProfileForm .fileUpload:hover {
+  background-color: #54a6dc;
+}
+
+
+@media screen and (max-width: 600px) {
+  .updateProfileForm {
+    width: 100%;
+  }
+
+  .updateProfileForm > input {
+    padding: 4vw 8vw;
+    margin: 2vmax;
+    font: 100 1.2rem "Roboto", sans-serif;
+    margin: 4vw;
+  }
+
+  .updateProfileForm > input[type="file"] {
+    width: 100%;
+  }
+
+  .updateProfileForm > input[type="file"]::-webkit-file-upload-button {
+    width: 70%;
+  }
+}
