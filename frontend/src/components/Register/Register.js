@@ -1,4 +1,4 @@
-import { Avatar, Button, Typography } from "@mui/material";
+import { Avatar, Button, Typography } from '@mui/material';
 import {
   AddPhotoAlternate,
   ChangeCircle,
@@ -7,28 +7,27 @@ import {
   Person,
   Visibility,
   VisibilityOff,
-} from "@mui/icons-material";
-import React, { useEffect, useState } from "react";
-import { useAlert } from "react-alert";
-import { useDispatch, useSelector } from "react-redux";
-import { Link } from "react-router-dom";
-import { registerUser } from "../../Actions/User";
-import "./Register.css";
+} from '@mui/icons-material';
+import React, { useEffect, useState } from 'react';
+import { useAlert } from 'react-alert';
+import { useDispatch, useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
+import { registerUser } from '../../Actions/User';
+import './Register.css';
 
 const Register = () => {
   const dispatch = useDispatch();
   const alert = useAlert();
 
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
   const [showPassword, setShowPassword] = useState(false);
   const [avatar, setAvatar] = useState(null);
 
   const { loading, error } = useSelector((state) => state.user);
 
   const handleImageChange = (e) => {
-    console.log("object");
     const file = e.target.files[0];
 
     const Reader = new FileReader();
@@ -50,7 +49,7 @@ const Register = () => {
   useEffect(() => {
     if (error) {
       alert.error(error);
-      dispatch({ type: "clearErrors" });
+      dispatch({ type: 'clearErrors' });
     }
   }, [dispatch, alert, error]);
 
@@ -71,9 +70,9 @@ const Register = () => {
           <Typography
             variant="h4"
             style={{
-              padding: "10px",
-              margin: "10px 0",
-              fontFamily: "Amiable Forsythia Free",
+              padding: '10px',
+              margin: '10px 0',
+              fontFamily: 'Amiable Forsythia Free',
             }}
           >
             Social Media App
@@ -82,7 +81,7 @@ const Register = () => {
             <Avatar
               src={avatar}
               alt="user"
-              sx={{ height: "9vmax", width: "9vmax" }}
+              sx={{ height: '9vmax', width: '9vmax' }}
             />
 
             <input
@@ -127,7 +126,7 @@ const Register = () => {
             <Lock className="icon" />
             <div className="input-field">
               <input
-                type={showPassword ? "text" : "password"}
+                type={showPassword ? 'text' : 'password'}
                 value={password}
                 required
                 onChange={(e) => setPassword(e.target.value)}
