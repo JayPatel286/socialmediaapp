@@ -1,10 +1,25 @@
 const mongoose = require("mongoose");
+const colors = require("colors");
 
-module.exports.connectDatabase = () => {
-  mongoose
-    .connect(process.env.MONGO_URI)
-    .then((con) =>
-      console.log(`Database connected: ${con.connection.db.databaseName}`)
-    )
-    .catch((err) => console.log(err));
+const connectDatabase = async () => {
+	await mongoose
+		.connect(process.env.MONGO_URI, {
+			useNewUrlParser: true,
+		})
+		.then((conn) => {
+			console.log(
+				"MongoDB connected ".green +
+					`| server:`.bold +
+					` ${conn.connection.host} | `.yellow +
+					`database:`.bold +
+					` ${conn.connection.db.databaseName}`.magenta
+			);
+		})
+		.catch((error) => {
+			console.log(
+				`Error connecting to database : `.white + `${error.message}`.bold.red
+			);
+		});
 };
+
+module.exports = { connectDatabase };

@@ -1,25 +1,32 @@
 const express = require("express");
 const {
-  register,
-  login,
-  followUser,
-  logout,
-  updatePassword,
-  updateProfile,
-  deleteMyProfile,
-  myProfile,
-  getUserProfile,
-  getAllUsers,
-  forgotPassword,
-  resetPassword,
-  getMyPosts,
-  getUserPosts,
+	register,
+	login,
+	followUser,
+	logout,
+	updatePassword,
+	updateProfile,
+	deleteMyProfile,
+	myProfile,
+	getUserProfile,
+	getAllUsers,
+	forgotPassword,
+	resetPassword,
+	getMyPosts,
+	getUserPosts,
+	verifyEmail,
+	getAllUsersForAdmin,
+	getAllPostsForAdmin,
+	getUserDetails,
+	deleteUserForAdmin,
+	blockOrUnblockUser,
 } = require("../controllers/userController");
-const { isAuthenticated } = require("../middlewares/auth");
+const { isAuthenticated, authorizedRoles } = require("../middlewares/auth");
 
 const router = express.Router();
 
 router.route("/register").post(register);
+router.route("/verification").put(verifyEmail);
 router.route("/login").post(login);
 router.route("/logout").get(logout);
 router.route("/follow/:id").get(isAuthenticated, followUser);
@@ -33,5 +40,16 @@ router.route("/user/:id").get(isAuthenticated, getUserProfile);
 router.route("/users").get(isAuthenticated, getAllUsers);
 router.route("/forgot/password").post(forgotPassword);
 router.route("/password/reset/:token").put(resetPassword);
+
+// ! Admin -> Get all users
+router
+	.route("/admin/users")
+	.get(isAuthenticated, authorizedRoles("admin"), getAllUsersForAdmin);
+
+router
+	.route("/admin/user/:id")
+	.get(isAuthenticated, authorizedRoles("admin"), getUserDetails)
+	.delete(isAuthenticated, authorizedRoles("admin"), deleteUserForAdmin)
+	.put(isAuthenticated, authorizedRoles("admin"), blockOrUnblockUser);
 
 module.exports = router;

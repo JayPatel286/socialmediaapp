@@ -1,98 +1,114 @@
 .login {
-  min-height: 100vh;
-  background-color: #f3f4f5;
+	min-height: 100vh;
+	background-color: #f3f4f5;
 
-  display: flex;
-  align-items: center;
-  justify-content: center;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 40px;
+	background-image: url("../../assets/bg2.jpg");
+	background-position: center;
 }
 
 .iphones {
-  display: flex;
-  width: 30%;
+	display: flex;
+	width: 30%;
 }
 
 .iphones .imgBox {
-  position: absolute;
-  width: 600px;
+	position: absolute;
+	width: 600px;
 }
 .iphones .imgBox.back {
-  top: 50px;
-  left: 200px;
+	top: 50px;
+	left: 200px;
 }
 .iphones .imgBox.front {
-  top: 60px;
-  left: 300px;
-  z-index: 15;
+	top: 60px;
+	left: 300px;
+	z-index: 15;
 }
 .iphones .imgBox .frame {
-  position: relative;
-  /* top: 0; */
-  /* left: 0; */
-  width: 100%;
-  z-index: 10;
+	position: relative;
+	/* top: 0; */
+	/* left: 0; */
+	width: 100%;
+	z-index: 10;
 }
 .iphones .imgBox .page {
-  position: absolute;
-  width: 255px;
-  top: 30px;
-  left: 165px;
+	position: absolute;
+	width: 255px;
+	top: 30px;
+	left: 165px;
 }
 
 .loginForm {
-  margin-top: -100px;
-  background-color: white;
-  width: 450px;
-  border-radius: 5px;
-  box-sizing: border-box;
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
-  align-items: center;
-  justify-content: center;
+	background-color: white;
+	/* margin-top: -100px; */
+	/* background-color: rgba(255, 255, 255, 0.5); */
+	width: 450px;
+	/* border-radius: 5px; */
+	box-sizing: border-box;
+	padding: 50px 20px 20px 20px;
+	display: flex;
+	flex-direction: column;
+	/* box-shadow: 0 0 15px rgba(0, 0, 0, 0.05); */
+	align-items: center;
+	justify-content: center;
+
+	/* From https://css.glass */
+	/* background: rgba(0, 0, 0, 0.6); */
+	border-radius: 16px;
+	box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+	backdrop-filter: blur(5px);
+	-webkit-backdrop-filter: blur(5px);
+	/* border: 1px solid rgba(255, 255, 255, 0.24); */
 }
 
 .loginForm > a {
-  text-decoration: none;
-  color: rgba(0, 0, 0, 0.8);
-  margin: 1vmax 2vmax;
+	text-decoration: none;
+	color: rgba(0, 0, 0, 0.8);
+	margin: 1vmax 2vmax;
 }
 .loginForm > button {
-  margin-top: 20px;
+	margin-top: 20px;
 }
 
 .gotoRegister {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 20px 0;
-  margin-top: 20px;
-  background-color: white;
-  width: 450px;
-  border-radius: 5px;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 20px 0;
+	margin-top: 20px;
+	width: 450px;
+	color: #fff;
+
+	background: rgba(0, 0, 0, 0.6);
+	border-radius: 16px;
+	box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+	backdrop-filter: blur(3px);
+	-webkit-backdrop-filter: blur(5px);
 }
 
 .gotoRegister > a {
-  text-decoration: none;
-  color: #0086fb;
-  font-weight: 600;
-  margin-left: 5px;
+	text-decoration: none;
+	color: #00d0ff;
+	font-weight: 600;
+	margin-left: 5px;
 }
 
 @media screen and (max-width: 600px) {
-  .loginForm {
-    width: 100%;
-  }
+	.loginForm {
+		width: 100%;
+	}
 
-  .loginForm > input {
-    padding: 4vw 8vw;
-    margin: 2vmax;
-    margin: 4vw;
-  }
+	.loginForm > input {
+		padding: 4vw 8vw;
+		margin: 2vmax;
+		margin: 4vw;
+	}
 
-  .loginForm > a {
-    align-self: center;
-  }
+	.loginForm > a {
+		align-self: center;
+	}
 }

@@ -5,66 +5,66 @@ import { useDispatch, useSelector } from "react-redux";
 import { getAllUsers } from "../../Actions/User";
 import User from "../User/User";
 import "./Search.css";
+import Logo from "../../assets/logo.png";
 
 const Search = () => {
-  const [name, setName] = useState("");
-  const dispatch = useDispatch();
+	const [name, setName] = useState("");
+	const dispatch = useDispatch();
 
-  const { users, loading } = useSelector((state) => state.allUsers);
+	const { users, loading } = useSelector((state) => state.allUsers);
 
-  const submitHandler = (e) => {
-    e.preventDefault();
+	const submitHandler = (searchName) => {
+		// e.preventDefault();
 
-    if (name === "") {
-      dispatch(getAllUsers());
-    } else {
-      dispatch(getAllUsers(name));
-    }
-  };
+		if (searchName === "") {
+			dispatch(getAllUsers());
+		} else {
+			dispatch(getAllUsers(searchName));
+		}
+	};
 
-  return (
-    <div className="search">
-      <form className="searchForm" onSubmit={submitHandler}>
-        <Typography
-          variant="h4"
-          style={{
-            padding: "10px",
-            marginBottom: "20px",
-            fontFamily: "Amiable Forsythia Free",
-          }}
-        >
-          Social Media App
-        </Typography>
+	return (
+		<div className="search">
+			<form className="searchForm" onSubmit={submitHandler}>
+				<img
+					src={Logo}
+					width={200}
+					style={{ marginBottom: "20px" }}
+					alt="Logo"
+				/>
 
-        <div className="input-box">
-          <SearchOutlined className="icon" />
-          <div className="input-field">
-            <input
-              type="text"
-              value={name}
-              onChange={(e) => setName(e.target.value)}
-            />
-            <label>Search by Name</label>
-          </div>
-        </div>
+				<div className="input-box">
+					<SearchOutlined className="icon" />
+					<div className="input-field">
+						<input
+							type="text"
+							// value={name}
+							onChange={(e) => {
+								// setName(e.target.value);
+								submitHandler(e.target.value);
+							}}
+						/>
+						<label>Search by Name</label>
+					</div>
+				</div>
 
-        <Button disabled={loading} type="submit">
-          Search
-        </Button>
-        <div className="searchResults">
-          {users &&
-            users.map((user) => (
-              <User
-                key={user._id}
-                userId={user._id}
-                name={user.name}
-                avatar={user.avatar.url}
-              />
-            ))}
-        </div>
-      </form>
-    </div>
-  );
+				{/* <Button disabled={loading} type="submit">
+					Search
+				</Button> */}
+				<div className="searchResults">
+					{users &&
+						users.map((user) => (
+							<User
+								key={user._id}
+								userId={user._id}
+								name={user.name}
+								avatar={user.avatar.url}
+							/>
+						))}
+				</div>
+			</form>
+		</div>
+	);
 };
 
 export default Search;

@@ -1,86 +1,124 @@
 .register {
-  min-height: 100vh;
-  background-color: #f3f4f5;
+	min-height: 100vh;
+	/* background-color: #f3f4f5; */
 
-  display: flex;
-  align-items: center;
-  justify-content: center;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	background-image: url("../../assets/bg2.jpg");
+	background-position: center;
 }
 
 .registerForm {
-  background-color: white;
-  width: 450px;
-  border-radius: 10px;
-  box-sizing: border-box;
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
+	background-color: white;
+	width: 900px;
+	/* border-radius: 10px; */
+	box-sizing: border-box;
+	padding: 40px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	/* box-shadow: 0 0 20px rgba(0, 0, 0, 0.05); */
+
+	/* background: rgba(0, 0, 0, 0.6); */
+	border-radius: 16px;
+	box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+	backdrop-filter: blur(5px);
+	-webkit-backdrop-filter: blur(5px);
 }
 
 .avatarImg input[type="file"] {
-  display: none;
+	display: none;
 }
 
 .avatarImg {
-  position: relative;
-  /* margin-bottom: 10px; */
+	/* position: relative; */
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	margin-top: 10px;
 }
 
 .registerForm .fileUpload {
-  display: flex;
-  position: absolute;
-  right: 0;
-  bottom: -20px;
-  align-items: center;
-  justify-content: center;
-  color: #fff;
-  margin: 25px 0;
-  background-color: #2691d9;
-  padding: 10px;
-  border-radius: 50%;
-  cursor: pointer;
-  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
-  transition: 0.3s;
+	display: flex;
+	position: absolute;
+	right: 0;
+	bottom: -20px;
+	align-items: center;
+	justify-content: center;
+	color: #fff;
+	margin: 25px 0;
+	background-color: #2691d9;
+	padding: 10px;
+	border-radius: 50%;
+	cursor: pointer;
+	box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+	transition: 0.3s;
+}
+
+.gotoLogin {
+	background-color: white;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 20px 0;
+	/* margin-top: px; */
+	width: 800px;
+
+	border-radius: 16px;
+	/* background: rgba(255, 255, 255, 0.6); */
+	box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+	backdrop-filter: blur(3px);
+	-webkit-backdrop-filter: blur(5px);
+}
+
+.gotoLogin > a {
+	text-decoration: none;
+	color: #00d0ff;
+	font-weight: 600;
+	margin-left: 5px;
+}
+
+.registerForm input {
+	width: 300px;
 }
 
 .registerForm .fileUpload:hover {
-  background-color: #54a6dc;
+	background-color: #54a6dc;
 }
 
-
-.registerForm > a {
-  align-self: flex-end;
-  text-decoration: none;
-  color: rgba(0, 0, 0, 0.342);
-  margin: 1vmax 2vmax;
-}
-
+/* .registerForm a {
+	text-decoration: none;
+	text-decoration: none;
+	color: #00d0ff;
+	font-weight: 600;
+} */
 
 @media screen and (max-width: 600px) {
-  .registerForm {
-    width: 100%;
-  }
+	.registerForm {
+		width: 100%;
+	}
 
-  .registerForm > input {
-    padding: 4vw 8vw;
-    margin: 2vmax;
-    font: 100 1.2rem "Roboto", sans-serif;
-    margin: 4vw;
-  }
+	.registerForm > input {
+		padding: 4vw 8vw;
+		margin: 2vmax;
+		font: 100 1.2rem "Roboto", sans-serif;
+		margin: 4vw;
+	}
 
-  .registerForm > input[type="file"] {
-    width: 100%;
-  }
+	.registerForm > input[type="file"] {
+		width: 100%;
+	}
 
-  .registerForm > input[type="file"]::-webkit-file-upload-button {
-    width: 70%;
-  }
+	.registerForm > input[type="file"]::-webkit-file-upload-button {
+		width: 70%;
+	}
 
-  .registerForm > a {
-    align-self: center;
-    text-decoration: none;
-    color: rgba(0, 0, 0, 0.342);
-  }
+	.registerForm > a {
+		align-self: center;
+		text-decoration: none;
+		color: rgba(0, 0, 0, 0.342);
+	}
 }
