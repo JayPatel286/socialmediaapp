@@ -13,7 +13,7 @@ exports.newReport = async (req, res) => {
 		res.status(201).json({
 			success: true,
 			report,
-			message: "Report created successfully",
+			message: "Report created successfully..!",
 		});
 	} catch (error) {
 		res.status(500).json({
