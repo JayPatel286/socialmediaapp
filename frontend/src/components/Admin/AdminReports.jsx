@@ -237,12 +237,12 @@ const AdminReports = () => {
 					<Button
 						variant="contained"
 						onClick={() => setStatusModal(false)}
-						color="primary"
+						color="error"
 					>
 						Cancel
 					</Button>
-					<Button variant="contained" onClick={handleStatus} color="error">
-						Report
+					<Button variant="contained" onClick={handleStatus} color="primary">
+						Update
 					</Button>
 				</DialogActions>
 			</Dialog>
